@@ -1,15 +1,163 @@
-<html>
+<html lang="us">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+  <meta name="author" content="Bruno Arrighi">
+  <meta name="description" content="Information for Pokemon.">
+  <link rel="shortcut icon" href="images/icono.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/app.css">
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
   <title>Pokedex</title>
 </head>
 
 <body>
-  <header>
-  </header>
-  <h1>Pokedex</h1>
-  <footer>
+
+  <div class="header">
+   
+    <img style="width: 80px; height: 80px;" src="images/icono.png" >
+    <input type="checkbox" id="chk">
+    <label for="chk" class="show-menu-btn">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <ul class="menu">
+      <a href="#home">Home</a>
+      <a href="#history">History</a>
+      <a href="#video">Video</a>
+      <a href="#contact">Contact</a>
+      <a href="#home">Pokedex</a>
+      <a href="#home">My favs</a>
+      <label for="chk" class="hide-menu-btn">
+        <i class="fas fa-times"></i>
+      </label>
+    </ul>
+ 
+</div>
+<div id="home">
+<img class="bg-img" src="images/fondo-pokemon2.jpg" alt="">   
+<!-- <img class="bg-img-mobile" src="images/fondo-celular.png" alt="">    -->
+<div class="home-wrapper">
+  <div class="home-content">
+    <h1> Welcome to Pokedex </h1>
+    <h3 style="color:white"> Join our comunity to find pokemon's news.
+    </h3>
+    <button class="button" href="#home">View more</button>
+  </div>
+  </div>
+</div>
+<div id="home-mobile">
+  <h1> Welcome </h1>
+  <h1> to  </h1>
+  <h1> Pokedex  </h1>
+  <h3 style="color: white;"> Join our comunity to find pokemon's news.
+  </h3>
+  <button class="button" href="#home">View more</button>
+  </div>
+
+     
+  <!-- history -->
+  <div id="history">
+    <h2>Pokemon history</h2>
+    <div class='some-page-wrapper'>
+      <div class='row'>
+        <div class='column-1'>
+          <div class="element1">
+            <div class="line-g">   </div>
+              <div class="year-g">
+                <i class="far fa-dot-circle"></i>
+              <span>1980</span>
+            </div>
+        </div>
+        </div>
+        <div class='column-2'>
+          <div>
+            <h3 style="color: green;">Firs Steps</h3>  
+        <p> Pokémon is short for “Pocket Monsters", the original Japanese name. The franchise has its roots in a gaming magazine in the early 1980s in Japan—Game Freak, started by Satoshi Tajiri and Ken Sugimori. Tajiri was the writer, while Sugimori was the illustrator.</p>
+        </div>
+        </div>
+      </div>
+      <div class='row2'>
+        <div class='column-4'>
+          <div class="element1">
+            <div class="line-r">   </div>
+              <div class="year-r">
+                <i class="fas fa-gamepad"></i>
+              <span>1996 </span>
+            </div>
+        </div>
+        </div>
+        <div class='column-3'>
+          <div>
+            <h3 style="color: red;">Game Boy</h3>  
+        <p> 26 February 1996 marks the debut of the Pokémon franchise in the form of both those games on the Game Boy in Japan. At its heart, Pocket Monsters: Red and Green was a very basic Japanese role-playing game.</p>
+        </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='column-1'>
+          <div class="element1">
+            <div class="line-y">   </div>
+              <div class="year-y">
+                <i class="fas fa-paw"></i>
+              <span>1998</span>
+            </div>
+        </div>
+        </div>
+        <div class='column-2'>
+          <div>
+            <h3 style="color: yellow;">Pikachu</h3>  
+        <p> The popularity of the anime and Yellow, I believe, led to Pikachu becoming the most recognizable and loved Pokémon out there. Pocket Monsters’ success led to North America getting the games in 1998 for the Game Boy (as Pokémon Red and Blue). These few years in the public saw Pokémon go from a game about a hobby to a worldwide phenomenon</p>
+        </div>
+        </div>
+      </div>
+   
+    </div>
+
+  </div>
+
+
+
+
+  <!-- video -->
+    <!-- <div id="video" class="bg-gray">
+    <h2>Video</h3>
+        <div class="video-wrapper">
+              <iframe  src="https://www.youtube.com/embed/Kwpp4mCCSa0"></iframe>
+          </div>
+  </div>   -->
+
+
+       
+ 
+ 
+  </div>
+
+  <div id="contact">
+  
+    <form class="contact-form">
+      <h2> Contact us </h2>
+      <input type="text" class="input" placeholder="Name">
+      <input type="email" class="input" placeholder="Email address" required="required">
+      <input type="text" class="input" placeholder="Subject">
+      <textarea class="input" placeholder="Mensaje"></textarea></br>
+      <button class="button" style="margin-block-end: 10px;">Send</button>
+    </form>
+  
+  </div>
+
+
+
+
+  <footer class="sm-padding bg-gray">
+
+
+    <div class="footer">
+      <p> Designed by <a>Agrofy</a></p>
+    </div>
   </footer>
 </body>
 
