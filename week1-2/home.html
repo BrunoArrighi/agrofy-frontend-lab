@@ -45,7 +45,7 @@
     <h1> Welcome to Pokedex </h1>
     <h3 style="color:white"> Join our comunity to find pokemon's news.
     </h3>
-    <button class="button" href="#home">View more</button>
+    <button class="button" onclick="location.href='#history'">View more</button>
   </div>
   </div>
 </div>
@@ -55,7 +55,7 @@
   <h1> Pokedex  </h1>
   <h3 style="color: white;"> Join our comunity to find pokemon's news.
   </h3>
-  <button class="button" href="#home">View more</button>
+  <button class="button" onclick="location.href='#history'">View more</button>
   </div>
 
      
@@ -123,12 +123,25 @@
 
 
   <!-- video -->
-    <!-- <div id="video" class="bg-gray">
-    <h2>Video</h3>
-        <div class="video-wrapper">
-              <iframe  src="https://www.youtube.com/embed/Kwpp4mCCSa0"></iframe>
-          </div>
-  </div>   -->
+     <div id="video" class="bg-gray">
+
+      <div class="row">
+        <div class="column-5">
+          <div class="video-wrapper">
+            <iframe class="iframe-video"  src="https://www.youtube.com/embed/Kwpp4mCCSa0"></iframe>
+        </div>
+      </div>  
+        <div class="column-5">
+      <div class="text-video">
+    <h2>Checkout the Official Pokemon Youtube Channel</h2>
+      <button class="button" onclick="location.href='https://www.youtube.com/user/PokemonOficialES'">View More</button>
+  </div>
+  
+  </div>
+       
+        
+      </div>
+  </div>  
 
 
        
@@ -143,7 +156,7 @@
       <input type="text" class="input" placeholder="Name">
       <input type="email" class="input" placeholder="Email address" required="required">
       <input type="text" class="input" placeholder="Subject">
-      <textarea class="input" placeholder="Mensaje"></textarea></br>
+      <textarea class="input" placeholder="Message"></textarea></br>
       <button class="button" style="margin-block-end: 10px;">Send</button>
     </form>
   
@@ -156,7 +169,7 @@
 
 
     <div class="footer">
-      <p> Designed by <a>Agrofy</a></p>
+      <p> Made by <a>Agrofy</a></p>
     </div>
   </footer>
 </body>
