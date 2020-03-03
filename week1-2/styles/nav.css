@@ -1,0 +1,101 @@
+
+/* body */
+body {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+
+/* nav */
+.header{
+  margin-top: 0px;
+    background: #1C1D21;
+  opacity: 0.8;
+color: #fff;
+position: fixed;
+width: 100%;
+}
+.logo{
+  line-height: 48px;
+  float: left;
+  text-transform: uppercase;
+}
+
+.menu{
+  float: right;
+  line-height: 48px;
+}
+.menu a{
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 10px;
+  transition: 0.4s;
+}
+.show-menu-btn,.hide-menu-btn{
+  transition: 0.4s;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+.show-menu-btn{
+  float: right;
+}
+.show-menu-btn i{
+  line-height: 100px;
+}
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover{
+  color: yellow;
+}
+
+#chk{
+  position: absolute;
+  visibility: hidden;
+  z-index: -1111;
+}
+
+.home-wrapper-mobile{
+  display:none;
+  }
+
+.content{
+  padding: 0 20px;
+}
+.content img{
+  width: 100%;
+  max-width: 700px;
+  margin: 20px 0;
+}
+.content p{
+  text-align: justify;
+}
+.bg-img-mobile{
+  display: none;
+}
+
+#home {
+  height: 100%;
+  padding: 0rem;
+}
+#home-mobile{
+  display: none;
+   }
+
+.scroll{
+  background: #fff;
+  color: black;
+  opacity: 1;
+}
+
+.scroll a{
+ 
+  color: black;
+ 
+}
+
