@@ -1,4 +1,21 @@
 
+    let createCards = () => {
+        let pokemones = JSON.parse(localStorage.getItem('pokemonesLocalStorage'));
+        pokemones.forEach((pokemon) => {
+        const content = `      
+               <div class="card">
+                       <img src="${pokemon.image}" alt="Avatar">
+                   <div class="container">
+                       <h4><b>${pokemon.name}</b></h4>
+                       <p>${pokemon.type}</p>
+                       <button class="button" id="${pokemon.id}" onclick="FbotonOn(${pokemon.id})"> ${pokemon.text} </button>
+                    </div>
+               </div>`;
+               container.innerHTML += content;
+
+      })
+
+}
     let pokemones = [];
     if(localStorage.length > 0){
     createCards();
@@ -44,26 +61,10 @@
     return pokemones;
 }
 
-function createCards(){
-    let pokemones = JSON.parse(localStorage.getItem('pokemonesLocalStorage'));
-    pokemones.forEach((pokemon) => {
-const content = `      
-               <div class="card">
-                       <img src="${pokemon.image}" alt="Avatar">
-                   <div class="container">
-                       <h4><b>${pokemon.name}</b></h4>
-                       <p>${pokemon.type}</p>
-                       <button class="button" id="${pokemon.id}" onclick="FbotonOn(${pokemon.id})"> ${pokemon.text} </button>
-                       </div>
-               </div>`;
-               container.innerHTML += content;
 
-      })
-
-}
     
         
- function FbotonOn(id) {
+ let FbotonOn = (id) => {
     let pokemones = JSON.parse(localStorage.getItem('pokemonesLocalStorage'));
     let result = pokemones.filter(p => p.id === id);
    let uno = document.getElementById(id);
@@ -86,8 +87,31 @@ const content = `
 })
   
  };
+ let FbotonSearch = (name, id) => {
+    let pokemones = JSON.parse(localStorage.getItem('pokemonesLocalStorage'));
+    let result = pokemones.filter(p => p.id === id);
+   let uno = document.getElementsByName(name);
+   result[0].status === 0 ? uno[0].innerText = "Remove to favorite":uno[0].innerText = "Add to favorite";
+   pokemones.forEach((poke, idx) => {
+    if(poke.id === id)
+    {
+        if (poke.status === 0) {
+         poke.status = 1;
+         poke.text = 'Remove to favorite';
+        }
+        else {
+            poke.status = 0;
+            poke.text = 'Add to favorite';
+        }
+        localStorage.setItem('pokemonesLocalStorage', JSON.stringify(pokemones));   
+        
+        
+    }
+})
+  
+ };
  let pokemonSearch = [];
- function searchPokemones(){
+ let searchPokemones = () => {
     
     let pokemones = JSON.parse(localStorage.getItem('pokemonesLocalStorage'));
     let search = document.getElementsByName("search")[0].value;
@@ -97,22 +121,22 @@ const content = `
         displaySearch();
     }
  }
- function isValid(pokeName, search){
+ let isValid = (pokeName, search) => {
     if(pokeName.indexOf(search) === 0) return true;
     else return false;
  }
 
 
 
- function cardSearch() {
+ let cardSearch = () => {
         pokemonSearch.forEach((poke, idx) => {
                 const content = `      
                     <div class="card">
                        <img src="${poke.image}" alt="Avatar">
                         <div class="container">
-                            <h6><b>${poke.name}</b></h6>
+                            <h4><b>${poke.name}</b></h4>
                             <p>${poke.type}</p>
-                            <button class="button" id="${poke.id}" onclick="FbotonOn(${poke.id}, ${poke.status})"> ${poke.text} </button>
+                            <button class="button" id="${poke.id}" name="${poke.name}" onclick="FbotonSearch('${poke.name}', ${poke.id})"> ${poke.text} </button>
                        </div>
                     </div>`;
                 containerSearch.innerHTML += content;
@@ -121,20 +145,31 @@ const content = `
     
  }
 
- function displaySearch(){  
+ let displaySearch = () => {  
     let div = document.getElementById("container");
     let divSearch = document.getElementById("containerSearch");
       div.style.display = "none";  
-      divSearch.style.display = "flex"; 
+      divSearch.style.display = "flex";
+      if(div !== null) {
+        while (divSearch.hasChildNodes()){
+            div.removeChild(div.lastChild);
+        }
+    }
   } 
 
-  function displayTotal(){
+  let displayTotal = () => {
+    
     document.getElementsByName("search")[0].value = "";
     let div = document.getElementById("container");
     let divSearch = document.getElementById("containerSearch");
       div.style.display = "flex";  
-      divSearch.style.display = "none"; 
-      poke.removeChild(card);
+      divSearch.style.display = "none";
+      createCards(); 
+    if(divSearch !== null) {
+        while (divSearch.hasChildNodes()){
+            divSearch.removeChild(divSearch.lastChild);
+        }
+    }
   }
 
 

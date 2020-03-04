@@ -19,7 +19,7 @@
 
 
                 
- function FbotonOn(id) {
+ let FbotonOn = (id) => {
     let pokemones = JSON.parse(localStorage.getItem('pokemonesLocalStorage'));
     let result = pokemones.filter(p => p.id === id);
    let uno = document.getElementById(id);
@@ -43,8 +43,7 @@
     refreshMyFavs(id);
  };
 
- function refreshMyFavs(id){
-    //Si existe la caja o el div...
+ let refreshMyFavs = (id) => {
     let poke = document.getElementById("myFavs");
     let card = document.getElementById(id);
 

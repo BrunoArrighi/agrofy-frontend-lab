@@ -1,7 +1,8 @@
 <html>
     <head>
         <!-- <link rel="stylesheet" href="styles/app.css"> -->
-        <link rel="stylesheet" href="styles/nav.css">
+        <!-- <link rel="stylesheet" href="styles/nav.css"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles/pokedex.css">
         <link rel="stylesheet" href="styles/app.css">
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
@@ -35,30 +36,28 @@
             
             <div class="search">
               <input type="text" placeholder="Search.." name="search">
-              <button class="button" type="submit" onclick="searchPokemones()" id="searchPokemones"> Search <i class="fa fa-search"></i></button>
-              <button class="button" type="submit" onclick="displayTotal()" id="refresh"> Refresh <i class="fa fa-redo-alt"></i></button>
+              <button class="button-search" type="submit" onclick="searchPokemones()" id="searchPokemones"> Search <i class="fa fa-search"></i></button>
+              <button class="button-search" type="submit" onclick="displayTotal()" id="refresh"> Refresh <i class="fa fa-redo-alt"></i></button>
+              <button class="button-mobile" type="submit" onclick="searchPokemones()" id="searchPokemones"> <i class="fa fa-search"></i></button>
+              <button class="button-mobile" type="submit" onclick="displayTotal()" id="refresh"> <i class="fa fa-redo-alt"></i></button>
             
 
-                <div class="row" id="container">
+                <div class="row-card" id="container">
             
                 </div>
-                <div class="row2" id="containerSearch">
-
+                <div class="row-card-2" id="containerSearch">
+                  
                 </div>
+                <footer class="sm-padding bg-gray">
+                  <div class="footer">
+                    <p> Made by <a>Agrofy</a></p>
+                  </div>
+                </footer>
               </div>
+              
               </div>
 
-
-                
-
-        
-
-
-
-        <footer>
-
-
-        </footer>
+              
         <script src="header.js"></script>
         <script src="card.js"></script>
     </body>
