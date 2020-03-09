@@ -1,10 +1,9 @@
 import React from 'react';
 import './Home.css';
+import HistorySection from './components/HistorySection/HistorySection';
 
 const Home = () => (
-  <div className="home page">
-    <h1>Home</h1>
-  </div>
+  <HistorySection />
 );
 
 export default Home;
