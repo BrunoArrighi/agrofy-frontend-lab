@@ -1,0 +1,58 @@
+.video-wrapper {
+    margin-left: 100;
+    width: 600;
+    height: 350;
+    right: 0px;
+    top: 20%;
+    text-align: left;
+  }
+  .iframe-video{
+    margin-top: 30px;
+    height: 300;
+    width: 500;
+  }
+  .text-video{
+    text-align: right;
+    margin-right: 50px;
+  }
+  .column-5 {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+  }
+  .text-video h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    color: #10161A;
+  }
+  
+  @media screen and (max-width:768px) {
+  
+    .iframe-video{
+      height: 200;
+      width: inherit;
+    }
+    .video-wrapper{
+      width: inherit;
+      margin-left: 0;
+      height: inherit;
+      right: 0px;
+      top: 20%;
+      text-align: center;
+    }
+    .text-video{
+      margin-right: 0px;
+      text-align: center;
+    }
+    .text-video h2{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      margin-top: 0px;
+      margin-bottom: 20px;
+      color: #10161A;
+      text-align: center;
+    }
+  
+  }

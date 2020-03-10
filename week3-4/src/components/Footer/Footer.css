@@ -1,0 +1,17 @@
+.footer{   
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0;
+    color: gray;
+  }
+  .sm-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .bg-gray {
+    background-color: #FAFAFA;
+    border-top: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
+  }

@@ -1,9 +1,16 @@
 import React from 'react';
 import './Home.css';
+import HistorySection from '../../components/HistorySection/HistorySection';
+import VideoSection from '../../components/VideoSection/VideoSection';
+import ContactSection from '../../components/ContactSection/ContactSection';
+import Footer from '../../components/Footer/Footer';
 
 const Home = () => (
-  <div className="home page">
-    <h1>Home</h1>
+  <div className="homePage">
+    <HistorySection />
+    <VideoSection />
+    <ContactSection />
+    <Footer />
   </div>
 );
 

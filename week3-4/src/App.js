@@ -3,8 +3,12 @@ import React, { Suspense, lazy } from 'react';
 import './styles/App.css';
 import Header from './components/Header/Header';
 
+
+
+
 const Home = lazy(() => import('./pages/Home/Home'));
 const Pokedex = lazy(() => import('./pages/Pokedex/Pokedex'));
+ 
 
 const App = () => (
   <React.Fragment>
@@ -16,6 +20,7 @@ const App = () => (
         <Route exact path="/pokedex" component={Pokedex}/>
       </Switch>
     </Suspense>
+   
   </Router>
   </React.Fragment>
 );
