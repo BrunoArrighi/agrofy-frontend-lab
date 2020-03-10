@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useEffect, useState, Fragment } from 'react';
 import './PokemonCard.css';
 import Button from '../Button/Button';
@@ -45,8 +45,18 @@ const PokemonCard = () => {
 
     
 
-    const cambiarEstado = () => {
-        
+    const cambiarEstado = (id) => {
+        let pokemonesCopy = pokemones;
+        const pokemon = pokemonesCopy.find(element => element.id === id); 
+        if(pokemon.status === 0) {
+            pokemon.status = 1;
+            pokemon.text = "Remove to favorite";
+        }
+        else {
+            pokemon.status = 0;
+            pokemon.text = "Add to favorite";
+        }
+        setPokemones(pokemonesCopy);
     }
 
      
@@ -65,7 +75,7 @@ const PokemonCard = () => {
                 <div className="container">
                     <h4><b>{pokemon.name}</b></h4>
                     <p>{pokemon.type}</p>
-                   <Button callback={() => cambiarEstado(pokemon)} label={pokemon.text}/>
+                   <Button callback={() => cambiarEstado(pokemon.id)} label={pokemon.text}/>
                  </div>
                  </div>
                  
@@ -74,54 +84,8 @@ const PokemonCard = () => {
             </div>
         </Fragment>
     );
-=======
-import React, { useEffect, useState } from 'react';
-import './PokemonCard.css';
 
 
-const PokemonCard = () => {
-    const [pokemon, setPokemon] = useState(null);    
-    //     useEffect( async() => {
-    //         for(let i=1; i<151; i++) {
-    //     const response = await fetch('https://pokeapi.co/api/v2/pokemon/'+i);
-    //     const data = await response.json();
-    //     const [item] = data.results;
-    //     pokemones.push({
-    //         name: item.name,
-    //         id: item.id,
-    //         type: item.types[0].type.name,
-    //         image: item.sprites.front_default
-    //     })
-    // }
-
-    //     setPokemon(pokemones);
-    // }, []);
-    const pokemones = [];
-    useEffect( () => {
-     setPokemonFunction()
-    }, []);
-    const setPokemonFunction = async () => {
-        
-        for (let i = 1; i <= 150; i++) {
-            const response = await  fetch('https://pokeapi.co/api/v2/pokemon/' + i)
-            const data = await response.json()
-            pokemones.push({
-                name: data.name,
-                id: data.id,
-                type: data.types[0].type.name,
-                image: data.sprites.front_default
-            });
-        }
-        setPokemon(pokemones);
-        
-       
-    }
-
-     return pokemones.map(function(item, i){
-        
-        return <h1>{item.name}</h1>
-      })
->>>>>>> 29d80e73a2a0176423a03553ebbff9a3f9c13e3a
 }
 
 export default PokemonCard;

@@ -27,15 +27,8 @@ const App = () => (
         <Route exact path="/pokedex" component={Pokedex}/>
       </Switch>
     </Suspense>
-<<<<<<< HEAD
-   
-=======
-    {/* <HistorySection />
-    <VideoSection />
-    <ContactSection />
-    <Footer /> */}
     <PokemonCard />
->>>>>>> 29d80e73a2a0176423a03553ebbff9a3f9c13e3a
+
   </Router>
   </React.Fragment>
 );
