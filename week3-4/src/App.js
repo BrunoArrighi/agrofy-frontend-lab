@@ -2,6 +2,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import React, { Suspense, lazy } from 'react';
 import './styles/App.css';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import HistorySection from './components/HistorySection/HistorySection';
+import VideoSection from './components/VideoSection/VideoSection';
+import ContactSection from './components/ContactSection/ContactSection';
+import PokemonCard from './components/PokemonCard/PokemonCard';
+import Api from './components/Api/Api';
+
 
 
 
@@ -20,7 +27,15 @@ const App = () => (
         <Route exact path="/pokedex" component={Pokedex}/>
       </Switch>
     </Suspense>
+<<<<<<< HEAD
    
+=======
+    {/* <HistorySection />
+    <VideoSection />
+    <ContactSection />
+    <Footer /> */}
+    <PokemonCard />
+>>>>>>> 29d80e73a2a0176423a03553ebbff9a3f9c13e3a
   </Router>
   </React.Fragment>
 );

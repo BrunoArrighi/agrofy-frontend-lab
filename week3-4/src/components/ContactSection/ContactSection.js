@@ -8,10 +8,14 @@ import { Link } from 'react-router-dom';
 
 const ContactSection = () => {
   
+<<<<<<< HEAD
   const goToHome = () => {
   };
 
   
+=======
+    
+>>>>>>> 29d80e73a2a0176423a03553ebbff9a3f9c13e3a
   
     return  <div id="contactSection">
   
@@ -22,7 +26,11 @@ const ContactSection = () => {
       <input type="text" className="input" placeholder="Subject"/>
       <textarea className="input" placeholder="Message"></textarea>
       
+<<<<<<< HEAD
       <Button callback={() => goToHome()} label={'Send'}></Button>
+=======
+      <Button label={'Send'}> <Link to="/"/> </Button>
+>>>>>>> 29d80e73a2a0176423a03553ebbff9a3f9c13e3a
     </form>
   
   </div>
