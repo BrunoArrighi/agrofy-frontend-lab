@@ -2,8 +2,10 @@ import React from 'react';
 import PokemonFavorite from '../../components/PokemonFavorite/PokemonFavorite';
 
 
+
+
 const MyFavs = () => (
-    <div className="myFavsPage">
+    <div className="myFavsPage" id="myFavs">
       <PokemonFavorite />
     </div>
   );

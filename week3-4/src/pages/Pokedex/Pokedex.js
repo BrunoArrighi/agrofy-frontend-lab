@@ -1,4 +1,5 @@
 import React, {useEffect, useState, Fragment} from 'react';
+import './Pokedex.css';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import SearchBar from '../../components/SearchBar/SearchBar'
 
@@ -40,14 +41,12 @@ const Pokedex = (props) => {
             }
 
             Promise.all(listPokemon).then((values) => { 
-                setPokemones(values);
                 refreshPokemones(values);
             });
         
     }
 
     const refreshPokemones = (values) => {
-      debugger;
       const pokeLocalStorage = JSON.parse(localStorage.getItem('PokeFavorite'));
       values.map((pokemon) => {
         if(pokeLocalStorage != null) {
@@ -58,7 +57,7 @@ const Pokedex = (props) => {
         }
         else {
           pokemon.status = 1;
-          pokemon.text = "Remove to favorite"
+          pokemon.text = "Remove to favorite";
         }
       }
       })
@@ -67,6 +66,7 @@ const Pokedex = (props) => {
     }
 
     const cambiarEstado = (id) => {
+
       let pokemonesCopy = [...pokemones];
       const local = JSON.parse(localStorage.getItem('PokeFavorite')) || [];
       const pokemon = pokemonesCopy.find(element => element.id === id); 
@@ -80,7 +80,9 @@ const Pokedex = (props) => {
       else {
           pokemon.status = 0;
           pokemon.text = "Add to favorite";
-          localStorage.removeItem('PokeFavorite',(pokemon));
+          const index = local.findIndex(x => x.id === pokemon.id);
+          if (index !== undefined) local.splice(index, 1);
+          localStorage.setItem('PokeFavorite', JSON.stringify(local));
       }
        setPokemones(pokemonesCopy);
       
@@ -94,12 +96,18 @@ const Pokedex = (props) => {
     setPokemones(filterPokemones);
 }
 
+const refresh = () => {
+  loadPokemones();
+}
+
 
   return (
   <Fragment>
   <div className="pokedexPage">
-<SearchBar search={(searchText) => searchPokemones(searchText)}/>
-    <PokemonCard listaPokemones={pokemones} updatePokemones={(id) => cambiarEstado(id)} />
+    <SearchBar  search={(searchText) => searchPokemones(searchText)}  refresh={() => refresh()}/>
+    </div>
+    <div>
+    <PokemonCard  listaPokemones={pokemones} updatePokemones={(id) => cambiarEstado(id)} />
   </div>
   </Fragment>
   )

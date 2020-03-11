@@ -1,0 +1,30 @@
+.bg-img {
+    height:100%;
+     width:100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .home-wrapper {
+    margin-left: 50;
+    margin-top: 50;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 50%;
+    text-align: left;
+  }
+  .home-content{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color: white;
+  }
+  .home-content h1, h2, h3{
+    color: white;
+    
+  }

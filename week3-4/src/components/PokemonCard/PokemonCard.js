@@ -11,9 +11,9 @@ const PokemonCard = (props) => {
     return (
         <Fragment>
             
-            <div>
+            <div className="row-card">
                 {props.listaPokemones.map((pokemon) =>
-                <div className="row-card">
+                
                     <div className="card">
                     <img src={pokemon.image} alt="Avatar" />
                 <div className="container">
@@ -21,7 +21,7 @@ const PokemonCard = (props) => {
                     <p>{pokemon.type}</p>
                    <Button callback={() => props.updatePokemones(pokemon.id)} label={pokemon.text}/>
                  </div>
-                 </div>
+                 
                  
             </div>
                 )}
