@@ -28,7 +28,6 @@ const ContactSection = () => {
 
       <Button callback={() => goToHome()} label={'Send'}></Button>
 
-      <Button label={'Send'}> <Link to="/"/> </Button>
 
     </form>
   

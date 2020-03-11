@@ -11,7 +11,6 @@ const Home = () => {
     <HistorySection />
     <VideoSection />
     <ContactSection />
-    <Footer />
   </div>
 }
 

@@ -4,78 +4,22 @@ import './PokemonCard.css';
 import Button from '../Button/Button';
 
 
-const PokemonCard = () => {
-    const [pokemones, setPokemones] = useState([]);    
-    const [load, setLoad] = useState(true);
 
-    useEffect( () => {
-     loadPokemons();
-    }, [load]);
+const PokemonCard = (props) => {
 
-    const loadPokemon = (id) => {
-        return new Promise((resolve, reject) => {
-            const response = fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then((response) => {
-                response.json().then((data) => {
-                    return resolve({
-                        name: data.name,
-                        id: data.id,
-                        type: data.types.length === 2 ? data.types['0'].type.name + ', ' + data.types['1'].type.name : data.types['0'].type.name,
-                        image: data.sprites.front_default,
-                        status: 0,
-                        text: 'Add to favorite'
-                    });
-                });
-            });
-        });  
-    }
-
-    const loadPokemons = () => {
-        if (load) {
-            let listPokemon = [];
-            for (let i = 1; i <= 150; i++) {
-                listPokemon.push(loadPokemon(i));
-            }
-
-            Promise.all(listPokemon).then((values) => { 
-                setPokemones(values);
-                setLoad(false);
-            });
-        }
-    }
-
-    
-
-    const cambiarEstado = (id) => {
-        let pokemonesCopy = pokemones;
-        const pokemon = pokemonesCopy.find(element => element.id === id); 
-        if(pokemon.status === 0) {
-            pokemon.status = 1;
-            pokemon.text = "Remove to favorite";
-        }
-        else {
-            pokemon.status = 0;
-            pokemon.text = "Add to favorite";
-        }
-        setPokemones(pokemonesCopy);
-    }
-
-     
-      
-
- 
 
     return (
         <Fragment>
             
             <div>
-                {pokemones.map((pokemon) =>
+                {props.listaPokemones.map((pokemon) =>
                 <div className="row-card">
                     <div className="card">
                     <img src={pokemon.image} alt="Avatar" />
                 <div className="container">
                     <h4><b>{pokemon.name}</b></h4>
                     <p>{pokemon.type}</p>
-                   <Button callback={() => cambiarEstado(pokemon.id)} label={pokemon.text}/>
+                   <Button callback={() => props.updatePokemones(pokemon.id)} label={pokemon.text}/>
                  </div>
                  </div>
                  
