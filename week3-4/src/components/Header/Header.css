@@ -1,18 +1,22 @@
 .header {
     display: flex;
-    max-width: 1200px;
     margin: auto;
     justify-content: space-between;
     padding: 10px;
+    background: white;
+    position: fixed;
+    width: 100%;
 }
 
 .header h2 {
     margin: 0;
+    color: black;
 }
 
 .header__logo a {
     display: flex;
     align-items: center;
+    margin-left: 50px;
 }
 
 .header__logo__image {
@@ -23,6 +27,8 @@
 .header__menu__desktop > ul {
     list-style: none;
     display: flex;
+    margin-right: 50px;
+    
 }
 
 .header__menu__desktop > ul a:not(:last-child) {

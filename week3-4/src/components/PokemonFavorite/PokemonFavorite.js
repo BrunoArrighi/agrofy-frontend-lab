@@ -59,7 +59,7 @@ const PokemonFavorite = () => {
                     <img src={pokemon.image} alt="Avatar" />
                 <div className="container">
                     <h4><b>{pokemon.name}</b></h4>
-                    <p>{pokemon.type}</p>
+                    <p>Type: {pokemon.type}</p>
                    <Button callback={() => cambiarEstado(pokemon.id)} label={pokemon.text}/>
                  </div>
                  
