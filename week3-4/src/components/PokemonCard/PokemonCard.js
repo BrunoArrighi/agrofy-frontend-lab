@@ -14,7 +14,7 @@ const PokemonCard = (props) => {
             <div className="row-card">
                 {props.listaPokemones.map((pokemon) =>
                 
-                    <div className="card">
+                    <div className="card" key={pokemon.id}>
                     <img src={pokemon.image} alt="Avatar" />
                 <div className="container">
                     <h4><b>{pokemon.name}</b></h4>

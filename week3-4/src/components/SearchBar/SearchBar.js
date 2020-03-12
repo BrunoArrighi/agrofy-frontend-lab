@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import Button from '../Button/Button';
 import './SearchBar.css';
+import ButtonSearch from '../ButtonSearch/ButtonSearch';
+import ButtonMobile from '../ButtonMobile/ButtonMobile'
 
 
 const SearchBar = (props) => {
@@ -8,8 +9,10 @@ const SearchBar = (props) => {
     return (
         <div className="search">
             <input value={searchText} onChange={(event) => setSearchText(event.target.value)} type="text"></input>
-             <Button callback={() => props.search(searchText)} label={"Search"}/>
-             <Button callback={() => props.refresh()} label={"Refresh"}/>
+             <ButtonSearch callback={() => props.search(searchText)} label={"Search"}/>
+             <ButtonSearch callback={() => props.refresh()} label={"Refresh"}/>
+             <ButtonMobile callback={() => props.search(searchText)} label={<img className="img-mobile" src="search-solid.svg"/>}/>
+             <ButtonMobile callback={() => props.refresh()} label={<img className="img-mobile" src="redo-solid.svg"/>}/>
         </div>
     )
 }

@@ -55,7 +55,7 @@ const PokemonFavorite = () => {
                     
                 {pokemones.map((pokemon) =>
                 
-                    <div className="card">
+                    <div className="card" key={pokemon.id}>
                     <img src={pokemon.image} alt="Avatar" />
                 <div className="container">
                     <h4><b>{pokemon.name}</b></h4>
@@ -74,7 +74,7 @@ const PokemonFavorite = () => {
         return (
         <Fragment>
             <div>
-                <h1>no tiene nada</h1>
+                
             </div>
         </Fragment>
         )

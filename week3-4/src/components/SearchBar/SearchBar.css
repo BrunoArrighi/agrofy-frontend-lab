@@ -1,7 +1,27 @@
-.search {
-    /* display: flex; */
-    margin-top: 10px;
-    position: absolute;
-    text-align: center;
-    width: 100%;
+
+
+  input[type="text"], input[type="email"], textarea {
+    height: 40px;
+    width: 50%;
+    border: yellow;
+    background: white;
+    border-bottom: 2px solid #EEE;
+    color: #354052;
+    padding: 0px 10px;
+    
   }
+  
+  textarea {
+    padding: 0px 10px;
+    width: 50%;
+    min-height: 80px;
+    resize: vertical;
+  }
+  
+  input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #6195FF;
+    opacity: 1;
+  }
+
+
+  

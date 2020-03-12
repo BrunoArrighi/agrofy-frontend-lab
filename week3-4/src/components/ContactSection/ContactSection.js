@@ -1,8 +1,7 @@
 import React from 'react';
 import './ContactSection.css';
 import Button from '../Button/Button';
-// import Link from '../Link/Link';
-import { Link } from 'react-router-dom';
+
 
 
 
@@ -25,8 +24,9 @@ const ContactSection = () => {
       <input type="text" className="input" placeholder="Subject"/>
       <textarea className="input" placeholder="Message"></textarea>
       
-
+      <div>
       <Button callback={() => goToHome()} label={'Send'}></Button>
+      </div>
 
 
     </form>

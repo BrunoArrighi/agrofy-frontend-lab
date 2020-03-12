@@ -1,6 +1,6 @@
 import React from 'react';
 import './HistorySection.css';
-{/* <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"></link> */}
+
 
 
 

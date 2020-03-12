@@ -29,3 +29,7 @@ input[type="text"], input[type="email"], textarea {
   .contact-form .input {
     margin-bottom: 20px;
   } 
+
+  h2 {
+    color: black;
+  }
