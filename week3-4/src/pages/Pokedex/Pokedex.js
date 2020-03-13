@@ -15,7 +15,7 @@ const Pokedex = (props) => {
 
     const loadPokemon = (id) => {
        return new Promise((resolve, reject) => {
-          const response = fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then((response) => {
+          fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then((response) => {
                 response.json().then((data) => {
                     return resolve({
                         name: data.name,
@@ -104,7 +104,9 @@ const refresh = () => {
   return (
   <Fragment>
   <div className="pokedexPage">
+    <div>
     <SearchBar  search={(searchText) => searchPokemones(searchText)}  refresh={() => refresh()}/>
+    </div>
     </div>
     <div>
     <PokemonCard  listaPokemones={pokemones} updatePokemones={(id) => cambiarEstado(id)} />
